@@ -81,7 +81,7 @@ node xiaohongshu-cards/scripts/doctor.mjs
 |---|---|---|
 | `--count N` | **目标卡片张数**（小红书单篇上限 18 张） | 不限，按内容自然张数 |
 | `--raw` | 原文一字不改 | 改写 |
-| `--theme 名称` | 主题名，如 `editorial` `brutal` `midnight` `y2k` | 按内容选 |
+| `--theme 名称` | 主题名，如 `editorial` `newspaper` `brutal` `y2k`（全表与选主题规则见 SKILL.md） | 用户点名优先；没点名按内容选 |
 | `--ratio 3:4` | 比例；小红书用 3:4，IG 用 4:5 | `3:4` |
 | `--out 目录` | 输出目录 | 原文/改写稿所在目录 |
 

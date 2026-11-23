@@ -2,6 +2,7 @@
   "_": "Main themes are listed, recommended and matrix-tested. Legacy themes still render by name; each names the main theme that replaces it.",
   "main": [
     "editorial",
+    "newspaper",
     "swiss",
     "quiet",
     "bento",

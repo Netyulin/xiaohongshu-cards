@@ -1,0 +1,74 @@
+/* newspaper | 报纸头版：米黄新闻纸、纯黑粗细线、思源宋体大标题、一点印章红。封面按头版排——
+   顶部粗黑线刊头、标题居中、双线分隔、要点装订成栏；正文卡是报纸栏目：栏目黑签、标题压线、
+   页眉页脚都有细线。适合新闻解读、时评、历史故事、政策与严肃议题。 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&display=block');
+:root {
+  --font-head: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', serif;
+  --font-body: var(--font-head);
+  --bg: #f8f4e9;
+  --ink: #16130e;
+  --muted: #6b6455;
+  --rule: #8f8772;
+  --rule-soft: #ddd5bf;
+  --fig-bg: #efe8d5;
+  --card: #fffdf6;
+  --on-acc: #f8f4e9;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --panel-mix: 9%;
+  --guard-bg: #16130e;
+  --guard-ink: #f8f4e9;
+  --guard-muted: #a89f88;
+  --accent-1: #a62b1f;
+  --accent-2: #1c1c1c;
+  --accent-3: #5a4632;
+  --accent-4: #274156;
+  --accent-5: #6d1f1f;
+  --accent-6: #3d4a22;
+  --accent-7: #4a2d4f;
+  --accent-8: #7a4a12;
+  --accent-9: #20504e;
+  --accent-10: #333333;
+  --accent-11: #8a3324;
+}
+
+/* ---------- Body cards: newspaper columns ---------- */
+.card:not(.c-cover) .c-top { border-bottom: 1px solid var(--rule-soft); padding-bottom: 8px; }
+.card:not(.c-cover) .c-foot { border-top: 1px solid var(--rule-soft); }
+.card .sec-label { background: var(--ink); color: #f8f4e9; border-radius: 0; }
+.card .sec-h { border-bottom: 2.5px solid var(--ink); padding-bottom: 9px; }
+.c-take {
+  background: var(--fig-bg); border-left: 0;
+  border-top: 3px solid var(--ink); border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+}
+.end-cta { background: var(--ink); }
+
+/* ---------- Cover: the front page ---------- */
+.cv-deco { inset: 0; width: auto; height: auto; }
+.cv-deco i:nth-child(1) { inset: 0 0 auto 0; height: 12px; border-radius: 0; opacity: 1; background: var(--ink); }
+.cv-deco i:nth-child(2) {
+  inset: auto; right: 30px; top: 62px; width: 44px; height: 44px;
+  border: 0; border-radius: 5px; opacity: .95; background: var(--acc);
+}
+.cv-deco i:nth-child(3) { display: none; }
+.c-cover .c-top { border-bottom: 4px double var(--ink); padding-bottom: 10px; }
+.c-cover .cv-kicker { text-align: center; letter-spacing: .3em; }
+.c-cover .cv-title { text-align: center; }
+.cv-rule {
+  width: 180px; height: 5px; background: transparent;
+  border-top: 3px solid var(--ink); border-bottom: 1px solid var(--ink);
+  margin: 22px auto 18px;
+}
+.cv-band, .cv-hook .c-foot { background: transparent; color: var(--ink); }
+.cv-band {
+  border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink);
+  margin-left: 0; margin-right: 0; padding: 18px 4px 14px;
+}
+.cv-band .cv-sub { font-family: var(--font-head); font-size: 19px; line-height: 1.6; text-align: center; }
+.cv-chips { justify-content: center; }
+.cv-chips span { border: 1.5px solid var(--ink); border-radius: 0; padding: 3px 12px; font-weight: 700; }
+.cv-hook .c-foot { color: var(--muted); border-top: 1px solid var(--rule-soft); justify-content: center; }
+.cv-toc { background: var(--card); box-shadow: 0 0 0 1.5px var(--ink); border-radius: 0; }
+.cv-vs-col { border-radius: 0; }
+.wx-cover.wide .cv-deco i:nth-child(2) { right: 56px; top: 44px; width: 64px; height: 64px; }

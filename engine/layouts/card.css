@@ -8,12 +8,12 @@ body { width: max-content; background: var(--sheet-bg, #9a9a96); }
 
 .card {
   width: var(--card-w, 540px); height: var(--card-h, 720px); overflow: hidden; position: relative;
-  display: flex; flex-direction: column; padding: 26px 30px 20px;
+  display: flex; flex-direction: column; padding: 28px 30px 22px;
   background: var(--bg); color: var(--ink);
 }
 .c-top, .c-foot {
   flex: none; display: flex; justify-content: space-between; align-items: center; gap: 12px;
-  font-size: 11.5px; color: var(--muted); letter-spacing: .03em; line-height: 1.4;
+  font-size: 11.5px; font-weight: 600; color: color-mix(in srgb, var(--muted) 68%, var(--ink)); letter-spacing: .05em; line-height: 1.4;
 }
 .c-foot { padding-top: 12px; font-size: 10.5px; }
 .c-foot span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
@@ -21,25 +21,25 @@ body { width: max-content; background: var(--sheet-bg, #9a9a96); }
 .c-body > * { flex: none; }
 .card > .c-top, .card > .c-body, .card > .c-foot { position: relative; z-index: 1; }
 /* Spare room on a card goes into larger type first (set by window.__fit). */
-.card.roomy .c-text { font-size: 19px; }
-.card.roomy .sec-h:not(.cont) { font-size: 33px; }
-.card.roomy .c-take { font-size: 17.5px; padding: 13px 16px; }
-.card.roomy .c-bullets li { font-size: 16.5px; margin-bottom: 6px; }
+.card.roomy .c-text { font-size: 20px; line-height: 1.78; }
+.card.roomy .sec-h:not(.cont) { font-size: 36px; }
+.card.roomy .c-take { font-size: 18.5px; padding: 15px 18px; }
+.card.roomy .c-bullets li { font-size: 17px; margin-bottom: 6px; }
 .card.roomy .c-cap { font-size: 14.5px; }
 
 /* ---------- Section card ---------- */
 .card .sec-label {
   align-self: flex-start; background: var(--panel-bg); color: var(--acc-text); font-weight: 700;
-  font-size: 12px; padding: 3px 11px; border-radius: var(--radius-sm); letter-spacing: .04em;
+  font-size: 12px; padding: 4px 12px; border-radius: var(--radius-sm); letter-spacing: .07em;
 }
 .card .sec-h {
   font-family: var(--font-head); font-weight: var(--w-h2, 900); color: var(--h2-card-ink, var(--ink));
-  font-size: 29px; line-height: 1.26; margin-top: 0; margin-bottom: 0; letter-spacing: .01em; text-wrap: balance;
+  font-size: 31px; line-height: 1.24; margin-top: 2px; margin-bottom: 0; letter-spacing: .015em; text-wrap: balance;
 }
 .card .sec-h.cont { font-size: 22px; }
-.c-text { font-size: 17px; line-height: 1.7; }
+.c-text { font-size: 17.5px; line-height: 1.74; }
 .c-bullets { list-style: none; }
-.c-bullets li { position: relative; padding-left: 16px; font-size: 15px; line-height: 1.6; margin-bottom: 4px; }
+.c-bullets li { position: relative; padding-left: 16px; font-size: 15.5px; line-height: 1.62; margin-bottom: 4px; }
 .c-bullets li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 5px; height: 5px; border-radius: 50%; background: var(--acc); }
 
 /* On a card, a figure's note follows its content instead of sitting at the bottom of the canvas, so the
@@ -52,11 +52,11 @@ body { width: max-content; background: var(--sheet-bg, #9a9a96); }
 .c-fig-card { flex: 1; min-height: 0; background: var(--fig-bg); border-radius: var(--radius); padding: 10px 12px; border: var(--fig-border, 0); }
 .c-fig-box { width: 100%; height: 100%; position: relative; overflow: hidden; }
 .c-fig .fig-canvas { position: absolute; left: 0; top: 0; width: 300px; height: 190px; transform-origin: 0 0; }
-.c-cap { font-size: 13.5px; color: var(--muted); text-align: center; margin-top: 6px; line-height: 1.5; }
+.c-cap { font-size: 13.5px; color: color-mix(in srgb, var(--muted) 78%, var(--ink)); text-align: center; margin-top: 6px; line-height: 1.5; }
 
 .c-take {
   margin-top: auto; background: var(--panel-bg); border-left: 4px solid var(--acc);
-  padding: 10px 14px; font-weight: 700; font-size: 16px; line-height: 1.55; color: var(--ink);
+  padding: 12px 16px; font-weight: 700; font-size: 16.5px; line-height: 1.58; color: var(--ink);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
@@ -145,14 +145,14 @@ body { width: max-content; background: var(--sheet-bg, #9a9a96); }
 /* image: the picture takes the card */
 .c-body > .c-pic { flex: 1 1 0; min-height: 200px; display: flex; flex-direction: column; }
 .c-pic img { flex: 1; min-height: 0; width: 100%; object-fit: cover; border-radius: var(--radius); display: block; }
-.cv-kicker { color: var(--acc-text); font-weight: 700; font-size: 14px; letter-spacing: .08em; }
+.cv-kicker { color: var(--acc-text); font-weight: 700; font-size: 14.5px; letter-spacing: .14em; }
 .cv-title {
   /* Start big; window.__fit shrinks it until it keeps the intended line breaks (min 36px). */
   font-family: var(--font-head); font-weight: var(--w-title, 900); font-size: var(--cv-size, 58px); line-height: 1.16;
   margin-top: 16px; color: var(--title-ink, var(--ink)); letter-spacing: var(--ls-title, .01em); text-wrap: balance;
 }
 .cv-title b { color: var(--acc-text); }
-.cv-rule { width: 64px; height: 6px; background: var(--acc); margin: 24px 0 18px; }
+.cv-rule { width: 72px; height: 7px; background: var(--acc); margin: 24px 0 18px; border-radius: calc(var(--radius-sm) / 2); }
 .cv-sub { font-size: 16.5px; line-height: 1.7; }
 /* Optional AI cover illustration: takes the space left on the cover (the TOC is dropped first if needed). */
 .c-body > .cv-ill { flex: 1 1 0; min-height: var(--cv-ill-min, 210px); margin: -4px 0 14px; }
@@ -211,7 +211,7 @@ body { width: max-content; background: var(--sheet-bg, #9a9a96); }
 .card.roomy .end-list li { font-size: 16.5px; padding: 9px 0; }
 .card.roomy .end-list.dense li { font-size: 15px; padding: 6px 0; }
 .end-src { margin-top: auto; font-size: 10.5px; color: var(--muted); line-height: 1.6; }
-.end-cta { background: var(--acc); color: var(--on-acc); text-align: center; padding: 10px; font-weight: 700; font-size: 15px; border-radius: var(--radius-sm); }
+.end-cta { background: var(--acc); color: var(--on-acc); text-align: center; padding: 13px 10px; font-weight: 700; font-size: 15.5px; letter-spacing: .05em; border-radius: var(--radius-sm); }
 
 /* ---------- Brand kit ---------- */
 .b-chip { display: inline-flex; align-items: center; gap: 7px; min-width: 0; }

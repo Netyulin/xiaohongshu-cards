@@ -1,11 +1,11 @@
-/* editorial | 商业杂志：暖白纸面、思源宋体、每节一个沉稳主色、米色图卡，接近 FT / 经济学人，严谨可信（默认）；适合商业分析、方法论长文、行业观察、人物观点 */
+/* editorial | 商业杂志：深色刊物封面配暖白纸面正文、思源宋体、每节一个沉稳主色、米色图卡，接近 FT / 经济学人，严谨可信（默认）；适合商业分析、方法论长文、行业观察、人物观点 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&display=block');
 :root {
   --font-head: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', serif;
   --font-body: var(--font-head);
   --bg: #fbfaf7;
   --ink: #1f1e1b;
-  --muted: #7a766d;
+  --muted: #6f6a5f;
   --rule: #dcd8cf;
   --rule-soft: #ebe8e1;
   --fig-bg: #efebe3;
@@ -37,7 +37,33 @@
 .cv-deco i:nth-child(3) { display: none; }
 .cv-band, .cv-hook .c-foot { background: transparent; color: var(--ink); }
 .cv-band { border-top: 3px double var(--ink); margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; }
-.cv-band .cv-sub { font-family: var(--font-head); font-size: 18px; }
+.cv-band .cv-sub { font-family: var(--font-head); font-size: 19px; line-height: 1.6; }
 .cv-chips span { border-radius: 0; border-width: 0 0 0 3px; border-color: var(--acc); padding: 0 0 0 9px; font-weight: 500; }
 .cv-hook .c-foot { color: var(--muted); }
 .wx-cover.wide .cv-deco i:nth-child(2) { right: 56px; top: 44px; width: 120px; height: 120px; }
+
+/* Cover redesign (2026-11): a dark magazine front — ink ground, paper type, the section
+   accent lightened for the dark ground. Scoped to card covers; body cards keep the
+   warm-paper look, so a set opens dark and turns the page into paper. */
+.card.c-cover {
+  --cv-acc: color-mix(in srgb, var(--acc) 55%, #ffffff);
+  --acc-text-override: var(--cv-acc);
+  background: #211f1c;
+  color: #f4efe4;
+}
+.card.c-cover .cv-title { color: #faf7ef; }
+.card.c-cover .cv-kicker { color: var(--cv-acc); }
+.card.c-cover .cv-rule { background: var(--cv-acc); }
+.card.c-cover .c-top, .card.c-cover .c-foot { color: #a79f8f; }
+.card.c-cover .cv-deco i:nth-child(1) { background: var(--cv-acc); }
+.card.c-cover .cv-deco i:nth-child(2) { background: linear-gradient(var(--cv-acc), var(--cv-acc)) 0 0 / 100% 3px no-repeat, linear-gradient(var(--cv-acc), var(--cv-acc)) 100% 0 / 3px 100% no-repeat; }
+.card.c-cover .cv-band {
+  background: rgba(244, 239, 228, .05);
+  border-top: 3px solid var(--cv-acc);
+  margin-left: -14px; margin-right: -14px;
+  padding: 20px 14px 16px;
+  color: #f4efe4;
+}
+.card.c-cover .cv-chips span { border-color: var(--cv-acc); color: #f4efe4; }
+.card.c-cover .cv-toc { background: #fbfaf7; color: var(--ink); }
+.card.c-cover .cv-vs-col.no { color: var(--muted); }
