@@ -19,6 +19,18 @@
 
 ---
 
+## AI 封面模式（可选）
+
+封面想要真实画面感时，可以只把第 1 张封面换成 AI 封面，正文卡照旧走排版引擎：
+
+1. 按风格库的提示词模板生成**无文字底图**（竖版 3:4、上半部留白）；
+2. 用 `scripts/ai_cover.py` 把标题、卖点、署名用思源字体**精确叠字**——AI 生图写中文必糊字，所以文字永远不让它画；
+3. 覆盖 `card-01.png` 即可。
+
+两种风格：**极简产品风**（白底留白、单一主体，适合产品/AI 工具）与**手帐拼贴风**（纸张照片拼贴，适合生活记录），模板与成品示例见 [docs/ai-cover-styles.md](docs/ai-cover-styles.md)（风格借鉴自 [VaneAi888/vane-gpt-image-skills](https://github.com/VaneAi888/vane-gpt-image-skills)，MIT）。需要 Python 3 + Pillow 与思源字体（文档内有获取方式）。
+
+---
+
 ## 安装
 
 ### 一、克隆
@@ -188,7 +200,11 @@ xiaohongshu-cards/
 │  ├─ count.mjs          张数规划器（本技能的核心）
 │  ├─ check.mjs          改写稿校验
 │  ├─ cards.mjs          出图 + 张数核对
-│  └─ fonts.mjs          字体本地化
+│  ├─ fonts.mjs          字体本地化
+│  └─ ai_cover.py        AI 封面合成：无文字底图 + 思源字体精确叠字
+├─ docs/
+│  ├─ ai-cover-styles.md AI 封面风格库：极简产品风 / 手帐拼贴风提示词模板
+│  └─ examples/          AI 封面成品示例
 ├─ references/
 │  └─ xhs-spec.md        content.json 卡片字段速查 + 张数数学 + 小红书硬限制
 └─ engine/               article2media 的共享引擎（MIT，vendored）
