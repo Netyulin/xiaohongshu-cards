@@ -1,0 +1,18 @@
+# 渲染产物
+article2media-out/
+*.png
+*.jpg
+cards/
+review/
+qa.json
+ledger.json
+
+# 依赖与系统
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+
+# 编辑器
+.vscode/
+.idea/

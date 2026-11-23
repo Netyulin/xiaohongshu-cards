@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  smoke:
+    name: 自检 + 示例出图
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: 环境自检
+        run: node scripts/doctor.mjs
+
+      - name: 张数规划器
+        run: node scripts/count.mjs examples/sample-content.json --target 6
+
+      - name: 校验示例改写稿
+        run: node scripts/check.mjs examples/sample-content.json --ratio 3:4
+
+      - name: 示例出图（3:4，6 张）
+        run: node scripts/cards.mjs examples/sample-content.json --count 6 --ratio 3:4 --out out/cards
+
+      - name: 示例出图（原文卡）
+        run: node scripts/cards.mjs examples/sample-article.md --ratio 3:4 --out out/raw
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sample-cards
+          path: out/
+          if-no-files-found: ignore
