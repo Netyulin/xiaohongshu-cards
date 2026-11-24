@@ -1,0 +1,67 @@
+/* pinecream | 松绿米纸：深松绿、米纸、沙金。取自传记创作平台「浮生志」的界面配色——
+   深松绿大色块压住场面，米纸底托正文，沙金只做线、签与点睛。封面整张是深松绿：
+   米白宋体大标题、沙金细线、描边胶囊要点；正文卡回到米纸，深绿签、沙金分隔。
+   适合人物故事、传记纪实、家族记忆、岁月感与温度感的内容。 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&display=block');
+:root {
+  --font-head: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+  --font-body: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+  --bg: #f6f1e7;
+  --ink: #22312a;
+  --muted: #6f7a6c;
+  --rule: #c4bfa9;
+  --rule-soft: #e2dccb;
+  --fig-bg: #efe7d2;
+  --card: #fcfaf3;
+  --on-acc: #f6f1e7;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --panel-mix: 8%;
+  --pine: #123f36;
+  --pine-deep: #0e352c;
+  --gold: #c9a45c;
+  --gold-soft: #e4cd9c;
+  --gold-deep: #8a6d1f;
+  --guard-bg: #123f36;
+  --guard-ink: #f3eddd;
+  --guard-muted: #a7b8a6;
+  --accent-1: #1d5c4d;
+  --accent-2: #8a6d1f;
+  --accent-3: #7a4a21;
+  --accent-4: #33566b;
+  --accent-5: #8c4a2f;
+  --accent-6: #556b2f;
+  --accent-7: #5e4b6b;
+  --accent-8: #20504e;
+  --accent-9: #6d1f1f;
+  --accent-10: #3c4a42;
+}
+
+/* ---------- Body cards: cream paper, pine labels, gold rules ---------- */
+.card .sec-label { background: var(--pine); color: #f3eddd; border-radius: 6px; letter-spacing: .18em; }
+.card .sec-h { border-bottom: 2px solid var(--gold); padding-bottom: 9px; }
+.c-take { background: var(--fig-bg); border-left: 4px solid var(--gold); }
+.end-cta { background: var(--pine); color: var(--gold-soft); letter-spacing: .24em; }
+.panel { border-top: 2px solid var(--pine); }
+.pg-title b, .end-h b { color: var(--gold-deep); }
+
+/* ---------- Cover: a full field of deep pine, like a book plate ---------- */
+.c-cover { background: linear-gradient(165deg, #17493e 0%, var(--pine) 55%, var(--pine-deep) 100%); color: #f3eddd; }
+.c-cover .c-top { color: #b9c6b4; border-bottom: 1px solid rgba(228, 205, 156, .35); padding-bottom: 10px; }
+.c-cover .c-foot { color: #b9c6b4; border-top: 1px solid rgba(228, 205, 156, .35); }
+.c-cover .cv-kicker { color: var(--gold-soft); letter-spacing: .32em; }
+.c-cover .cv-title { color: #f6f1e7; letter-spacing: .04em; }
+.c-cover .cv-title b { color: var(--gold-soft); font-weight: inherit; }
+.cv-rule { width: 180px; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-soft)); border-radius: 2px; }
+.cv-band, .cv-hook .c-foot { background: transparent; color: #f3eddd; }
+.cv-band .cv-sub { color: #d9dcc9; font-family: var(--font-head); letter-spacing: .03em; }
+.cv-chips span { border: 1px solid rgba(228, 205, 156, .55); color: #efe6cc; border-radius: 999px; }
+.cv-deco i:nth-child(1) { background: var(--gold); opacity: .9; }
+.cv-deco i:nth-child(2) { background: var(--gold-soft); opacity: .5; }
+.cv-deco i:nth-child(3) { background: #2e6b58; opacity: .55; }
+
+/* ---------- Quote cards: deep pine too ---------- */
+.card.c-quote { background: linear-gradient(165deg, #17493e, var(--pine-deep)); color: #f3eddd; }
+.card.c-quote .c-top, .card.c-quote .c-foot { color: #b9c6b4; opacity: 1; }
+.card.c-quote .sec-label { background: transparent; border: 1px solid rgba(228, 205, 156, .55); color: var(--gold-soft); }
+.card.c-quote .cq-from { color: var(--gold-soft); letter-spacing: .2em; }
